@@ -1,0 +1,59 @@
+.home-banner {
+  padding: 206px 0;
+  background-size: cover;
+}
+
+.need-done {
+  background-image: url(../../../Assets/Img/Rectangle13046.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: var(--colorDarkBlue);
+  padding: 125px 0;
+}
+
+/* Top Service  */
+.cities > a:hover{
+    text-decoration: underline !important;
+    transition: 0.2s;
+}
+
+/* TODO  */
+.todo {
+  background-image:  linear-gradient(#246b77f8, #246b77ad), url(../../../Assets/Img/Rectangle13030.png);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Slider CSS  */
+.wrapperImg1 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Happy Customer Slider CSS  */
+.card-box{
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 768px) {
+  body .need-done {
+    background-image: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .need-done {
+    background-image: none;
+    padding: 50px 0;
+  }
+  body .home-banner {
+    padding: 60px 0;
+  }
+}
+.slick-slide > div {
+  margin: 0 10px;
+}
+.slick-list {
+  margin: 0 -10px;
+}

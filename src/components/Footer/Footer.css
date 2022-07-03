@@ -1,0 +1,78 @@
+.fb_logo svg path:hover {
+  fill: #1877f2;
+}
+.inst_logo svg path:hover {
+  fill: #8a3ab9;
+}
+
+.twitter_logo svg path:hover {
+  fill: #1DA1F2;
+}
+
+.yt_logo svg path:hover {
+  fill: #ff001a;
+}
+
+.fBorTop{
+  border-top: 1px solid var(--colorLightBlack);
+}
+
+.fcolor{
+  color: #909395;
+}
+a:hover{
+  color: #1DA1F2;
+}
+
+ /* <section className="bgBlack pb10">
+           <Container>
+             <Row>
+               <Col lg={3}>
+                 <section>
+                   <h1 className=" fw700 mb18 mobMb0">
+                     <Link to="#" className="colorBlue">Bluelbis</Link>
+                   </h1>
+                 </section>
+               </Col>
+               <Col lg={9}>
+                 <Row>
+                   <div className="text-end">
+                     <ul className="d-flex">
+                       <li className="">
+                         <Link className="" to="#">
+                           Terms
+                         </Link>
+                       </li>
+                       <li className="">
+                         <Link className="" to="#">
+                           Privacy
+                         </Link>
+                       </li>
+                       <li className="">
+                         <Link className="" to="#">
+                           Cookies Policy
+                         </Link>
+                       </li>
+                       <li className="">
+                         <Link className="" to="#">
+                           Pro Center
+                         </Link>
+                       </li>
+                     </ul>
+                   </div>
+                 </Row>
+               </Col>
+             </Row>
+           </Container>
+
+           <div className="fBorTop">
+             <Container>
+               <p className="colorWhite ">
+                 By continuing past this page, you agree to our Terms of Service,
+                 Cookie Policy, Privacy Policy and Content Policies. All
+                 trademarks are properties of their respective owners. 2012-2021
+                 © Bluebis Pvt Ltd. All rights reserved.
+               </p>
+             </Container>
+           </div>
+         </section> */

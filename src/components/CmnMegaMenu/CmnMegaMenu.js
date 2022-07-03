@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Modal, ModalBody, ModalHeader } from "reactstrap";
+import {Modal, ModalBody, ModalHeader } from "reactstrap";
 import "./CmnMegaMenu.scss";
-import { CmnMegaMenuStyle } from "./CmnMegaMenuStyle";
 
 class CmnMegaMenu extends Component {
   constructor(props) {
@@ -75,7 +74,16 @@ class CmnMegaMenu extends Component {
   render() {
     return (
       <>
-        <CmnMegaMenuStyle />
+        <style jsx="true">
+          {`
+            .modal-fullscreen .btn-close,
+            .modal-fullscreen .modal-footer button {
+              position: relative;
+              right: 22px;
+              top: 3px;
+            }
+          `}
+        </style>
         <Modal
           size={this.state.size}
           isOpen={this.state.showmodal}
@@ -96,12 +104,30 @@ class CmnMegaMenu extends Component {
             }}
           >
             {this.state.title && (
-              <h1 className="fBold fs24 mb0 text-capitalize colorDarkBlack">
+              <h1
+                style={{ color: "#000" }}
+                className="fBold fs24 mb0 text-capitalize"
+              >
                 {this.state.title}
               </h1>
             )}
           </ModalHeader>
           <ModalBody className="p-3">{this.state.message}</ModalBody>
+          {/* <ModalFooter>
+            <Button
+              size="sm"
+              style={{
+                backgroundColor: "#EC7523",
+                color: "white",
+                fontFamily: "Arial",
+                padding: "5px 25px",
+                border: "none",
+              }}
+              onClick={() => this.onclickyes()}
+            >
+              Ok
+            </Button>
+          </ModalFooter> */}
         </Modal>
       </>
     );

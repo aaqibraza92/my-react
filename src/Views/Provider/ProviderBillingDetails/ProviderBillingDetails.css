@@ -1,0 +1,31 @@
+/*react select*/
+.themeSelect__indicator-separator {
+    display: none;
+  }
+  .themeSelect__control {
+    border: 1px solid #d5d5d5;
+    outline: none !important;
+  }
+  .themeSelect__option--is-selected {
+    background: var(--colorBlue) !important;
+  }
+  .themeSelect__option:hover {
+    background: var(--colorBlue) !important;
+    color: #fff;
+  }
+  .themeSelect *,
+  .themeSelect {
+    outline: none !important;
+  }
+  .themeSelect__input-container {
+    margin-top: -6px !important;
+  }
+  .themeSelect__value-container {
+    height: 45px;
+  }
+  .themeSelect__control--is-focused {
+    border-color: var(--colorBlue) !important;
+    -webkit-box-shadow: 0 0 0 0 var(--colorBlue) !important;
+    box-shadow: 0 0 0 0 var(--colorBlue) !important;
+  }
+  /*react select*/

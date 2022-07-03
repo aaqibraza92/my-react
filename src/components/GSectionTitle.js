@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import GAlign from "./GComponents/GAlign";
+import GAlign from "./GComponents/GAlign";
 const Wrapper = styled.div`
   display: flex;
   margin: 0;

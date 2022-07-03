@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "reactstrap";
-import GSignup from "../../../Components/GComponents/GSignup";
-import GSection from "../../../Components/GComponents/GSection";
-import GSpacing from "../../../Components/GComponents/GSpacing";
-import GSwitchTab from "../../../Components/GComponents/GSwitchTab";
-import GSectionTitle from "../../../Components/GSectionTitle";
-import GIconInput from "../Layout/GIconInput";
-import GButton from "../Layout/GButton";
-import GLogin from "../Layout/GLogin";
-import Img from "../../assets/Img/Img";
+import Img from "../../Assets/Img/Img";
+import GLogin from "../../Components/GComponents/GLogin";
+import GSignup from "../../Components/GComponents/GSignup";
+import GSection from "../../Components/GComponents/GSection";
+import GSpacing from "../../Components/GComponents/GSpacing";
+import GSwitchTab from "../../Components/GComponents/GSwitchTab";
+import GSectionTitle from "../../Components/GSectionTitle";
+import GIconInput from "../../Components/GComponents/GIconInput";
+import GButton from "../../Components/GComponents/GButton";
 
 const Login = (props) => {
   return (
@@ -101,7 +101,7 @@ const Forgot = (props) => {
     <>
       <div className="p-3">
         <h3>Forgot Password</h3>
-        <p className="fs14">
+        <p className="fs16">
           Enter the email address associated with your account and we'll send
           you a link to reset your password.
         </p>
@@ -121,7 +121,7 @@ const Forgot = (props) => {
           Submit
         </GButton>
         <div className="IfNotAccount text-center mt20">
-          <p className="fs14 mb0">
+          <p className="fs16 mb0">
             Don't have an account ?
             <button className="btnBlank colorBlue">
               {/* <button className="btnBlank colorOrange" onClick={() => IsSignup()}> */}
@@ -138,7 +138,7 @@ const ForgotSuccessText = (props) => {
   return (
     <>
       <div className="text-center">
-        <img className="img-fluid mb20" src={Img.success} alt=""  />
+        <img className="img-fluid" src={Img.success} alt="" className="mb20"/>
         <h2 className="f24 f700 colorBlack fBold mb10">Mail Sent</h2>
         <p className="fs14 mb5">
           Change password link has been sent to

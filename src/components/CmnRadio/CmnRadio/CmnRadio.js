@@ -1,10 +1,8 @@
 import React from "react";
-import { CmnRadioStyle } from "./CmnRadioStyle";
+import "./CmnRadio.scss";
 
 const CmnRadio = (props) => {
   return (
-    <>
-    <CmnRadioStyle/>
     <div className="cmnRadioOnly">
       <input
         type="radio"
@@ -14,10 +12,9 @@ const CmnRadio = (props) => {
         checked={props.checked}
         value={props.value}
         onChange={props.onChange}
-        />
-      <Label htmlFor={props.id}>{props.label}</Label>
+      />
+      <label htmlFor={props.id}>{props.label}</label>
     </div>
-        </>
   );
 };
 

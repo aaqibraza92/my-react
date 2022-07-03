@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
-import { AlertModalStyle } from "./AlertModalStyle";
+import "./AlertModal.scss";
 
 class AlertModal extends Component {
   constructor(props) {
@@ -67,40 +67,57 @@ class AlertModal extends Component {
   render() {
     return (
       <>
-        <AlertModalStyle />
-        <Modal
-          size={this.state.size}
-          isOpen={this.state.showmodal}
-          toggle={this.state.toggleit}
-          centered={true}
-          className={`modal-dialog myallrtt ${this.props.className}`}
-          backdrop="static"
-          keyboard={false}
-          fullscreen={this.state.fullScreen}
+      <style jsx="true">{
+        `
+        .modal-fullscreen .btn-close,.modal-fullscreen .modal-footer button {
+          position: relative;
+          right: 22px;
+          top: 3px;
+        }
+        `
+      }
+ 
+      </style>
+          <Modal
+        size={this.state.size}
+        isOpen={this.state.showmodal}
+        toggle={this.state.toggleit}
+        centered={true}
+        className={`modal-dialog myallrtt ${this.props.className}`}
+        backdrop="static"
+        keyboard={false}
+        fullscreen={this.state.fullScreen}
+      >
+        <ModalHeader
+          className="header_area_alert bBnone"
+          charcode="&#x2715;"
+          toggle={() => this.toggleit()}
         >
-          <ModalHeader
-            className="header_area_alert bBnone"
-            charcode="&#x2715;"
-            toggle={() => this.toggleit()}
+          {this.state.title && (
+            <p style={{color : "#000"}} className="fBold fs24 mb0 text-capitalize">
+              {this.state.title}
+            </p>
+          )}
+        </ModalHeader>
+        <ModalBody className="p-3">{this.state.message}</ModalBody>
+        <ModalFooter>
+          <Button
+            size="sm"
+            style={{
+              backgroundColor: "#47BBD0",
+              color: "white",
+              fontFamily: "Arial",
+              padding: "5px 25px",
+              border : "none",
+            }}
+            onClick={() => this.onclickyes()}
           >
-            {this.state.title && (
-              <p className="fBold fs24 mb0 text-capitalize colorDarkBlack">
-                {this.state.title}
-              </p>
-            )}
-          </ModalHeader>
-          <ModalBody className="p-3">{this.state.message}</ModalBody>
-          <ModalFooter>
-            <Button
-              size="sm"
-              className="modal_btn"
-              onClick={() => this.onclickyes()}
-            >
-              Ok
-            </Button>
-          </ModalFooter>
-        </Modal>
+            Ok
+          </Button>
+        </ModalFooter>
+      </Modal>
       </>
+  
     );
   }
 }

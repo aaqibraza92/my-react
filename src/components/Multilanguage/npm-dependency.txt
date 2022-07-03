@@ -1,6 +1,0 @@
-i18next,
-i18next-browser-languagedetector,
-react-i18next
-
-
-full documentation on https://react.i18next.com/

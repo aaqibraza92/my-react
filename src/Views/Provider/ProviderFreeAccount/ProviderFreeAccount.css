@@ -1,0 +1,18 @@
+.close-btn {
+  position: relative;
+}
+
+.close-btn svg {
+  position: absolute;
+  right: 12px;
+  top: -110px;
+}
+
+.free-account-link{
+    position: relative;
+}
+
+.free-account-link a{
+    position: absolute;
+    top: 2px;
+}

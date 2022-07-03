@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./CmnFileUploadFile.scss";
-import { CmnFileUploadFileStyle } from "./CmnFileUploadFileStyle";
 
 const CmnFileUploadFile = (props) => {
   const [uploadedFileOnly, setuploadedFileOnly] = useState([]);
@@ -20,7 +19,9 @@ const CmnFileUploadFile = (props) => {
       updatedarray.push(dataarray[u]);
     }
 
+    //to send state to another fle where this component is calling
     props.callback(updatedarray);
+
     setuploadedFileOnly(updatedarray);
   };
 
@@ -33,8 +34,7 @@ const CmnFileUploadFile = (props) => {
 
   return (
     <>
-    <CmnFileUploadFileStyle/>
-      <Label
+      <label
         htmlFor={props.id}
         className="CmnFileUploadFile radius d-flex align-items-center pl15 pr15 pt5 pb5"
       >
@@ -87,7 +87,7 @@ const CmnFileUploadFile = (props) => {
           </svg>
         </span>
 
-        <span className="colorBlue fs15">Upload</span>
+        <span className="colorBlue fs16">Upload</span>
 
         <input
           type="file"
@@ -96,7 +96,7 @@ const CmnFileUploadFile = (props) => {
           className={`d-none ${props.className}`}
           id={props.id}
         />
-      </Label>
+      </label>
 
       {uploadedFileOnly.map((obj, ind) => {
         return (
@@ -104,7 +104,7 @@ const CmnFileUploadFile = (props) => {
             key={ind}
             className="d-flex align-items-center flex-wrap justify-content-between w-100 borFileUpl mb8 radius4"
           >
-            <div className="colorPara fs15">{obj.file.name}</div>
+            <div className="colorPara fs16">{obj.file.name}</div>
             <div>
               <button
                 className="btn_delete_iconFile radius100"

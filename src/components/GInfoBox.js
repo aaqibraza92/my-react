@@ -31,28 +31,17 @@ const Wrapper = styled.div`
     -moz-object-fit: cover;
     object-fit: cover;
   }
-
-  .label {
-    font-size: 15px;
-    font-weight: 600;
-  }
-
-  .text {
-    font-size: 14px;
-    color: #5b5d6b;
-    margin-bottom: 0;
-  }
 `;
 const GInfoBox = ({
   imageURL = "",
   icon = "",
   label = "Lorem Ipsum",
-  align = "center",
-  iconWidth = 48,
-  iconHeight = 48,
-  imgWidth = 48,
-  imgHeight = 48,
-  text = "",
+  align="center",
+  iconWidth=48,
+  iconHeight=48,
+  imgWidth=48,
+  imgHeight=48,
+  text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
   ...rest
 }) => {
   return (
@@ -62,11 +51,33 @@ const GInfoBox = ({
         {icon && <span className="icon">{icon}</span>}
       </div>
       <div>
-        <div className="label"> {label ? label : "Lorem Ipsum"}</div>
-        <p className="text">{text && text}</p>
+        <div> {label ? label : "Lorem Ipsum"}</div>
+        <div>
+          {text && text}
+        </div>
       </div>
     </Wrapper>
   );
 };
 
 export default GInfoBox;
+
+const Icon = {
+  dummy: (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+      >
+        <path
+          id="Path_26668"
+          data-name="Path 26668"
+          d="M24,0A24,24,0,1,1,0,24,24,24,0,0,1,24,0Z"
+          fill="#47bbd0"
+        />
+      </svg>
+    </>
+  ),
+};

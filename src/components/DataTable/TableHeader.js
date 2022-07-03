@@ -59,7 +59,6 @@ const TableHeader = (props) => {
               <div className="row gx-1 gy-2 justify-content-center justify-content-md-end">
                 <div className="col-5 col-md-4 col-lg-3">
                   <DatePicker
-                  showYearDropdown
                     className="date_picker"
                     selected={fromDate}
                     name="fromDate"
@@ -71,7 +70,6 @@ const TableHeader = (props) => {
                 </div>
                 <div className="col-5 col-md-4 col-lg-3">
                   <DatePicker
-                  showYearDropdown
                     className="date_picker"
                     selected={toDate}
                     name="fromDate"

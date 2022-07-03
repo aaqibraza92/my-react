@@ -1,0 +1,130 @@
+.referral-badge {
+  /* background-color: var(--colorYellow);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%); */
+  /* background: url(../../../Assets/Img/Path24191.png);
+    background-size: 100%;
+    background-repeat: no-repeat; */
+}
+
+.badge-mb span svg {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+}
+.credit-badge-content {
+  position: absolute;
+  top: 20px;
+  right: 31px;
+}
+
+@media only screen and (max-width: 767px) {
+  .crb-head {
+    font-size: 24px;
+    padding-top: 10px;
+  }
+  .crb-para {
+    font-size: 13px;
+  }
+  .badge-mb {
+    bottom: 22px;
+    right: -10px;
+  }
+  .crb-badge-head {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+  .credit-badge-svg svg {
+    height: 100px;
+width: 100px;
+  }
+  .credit-badge-content {
+    top: -61px;
+    right: 30px;
+  }
+  .badge-mb span svg {
+    position: absolute;
+    top: -73px;
+    right: 8px;
+  }
+  .credit-badge-content h1 {
+    font-size: 26px;
+  }
+  .credit-badge-content h3 {
+    font-size: 20px;
+  }
+  .crb-head {
+    width: 72%;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 767px) {
+  .crb-head {
+    padding-top: 15px;
+  }
+  .badge-mb {
+    bottom: 17px;
+  }
+  .credit-badge-svg svg {
+    height: 90px;
+    width: 90px;
+  }
+  .credit-badge-content h1 {
+    font-size: 26px;
+  }
+  .credit-badge-content h3 {
+    font-size: 20px;
+  }
+  .crb-head {
+    width: 72%;
+  }
+  .badge-mb span svg {
+    position: absolute;
+    top: -80px;
+    right: -17px;
+  }
+  .credit-badge-content {
+    position: absolute;
+    top: -70px;
+    right: 3px;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .credit-badge-svg svg {
+    height: 75px;
+    width: 75px;
+  }
+  .credit-badge-content h1 {
+    font-size: 18px;
+  }
+  .credit-badge-content h3 {
+    font-size: 14px;
+  }
+  .badge-mb span svg {
+    position: absolute;
+    top: -71px;
+    right: -16px;
+  }
+  .credit-badge-content {
+    position: absolute;
+    top: -62px;
+    right: 2px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+    .credit-badge-svg svg {
+        height: 90px;
+        width: 90px;
+      }
+      .badge-mb span svg {
+        position: absolute;
+        top: -59px;
+        right: 25px;
+      }
+      .credit-badge-content {
+        position: absolute;
+        top: -51px;
+        right: 34px;
+      }
+    }

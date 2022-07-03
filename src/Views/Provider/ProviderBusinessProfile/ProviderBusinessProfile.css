@@ -1,0 +1,11 @@
+.rat-bgGreen svg {
+    position: absolute;
+    top: 9px;
+    left: 7px;
+  }
+
+  .right-bgGreenball svg{
+    position: absolute;
+    top: 5px;
+    right: 60px;
+  }

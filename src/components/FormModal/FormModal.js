@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Modal, ModalBody, ModalHeader } from "reactstrap";
-import { FormModaStyle } from "./FormModaStyle";
+import "./FormModal.css";
 
 class FormModal extends Component {
   constructor(props) {
@@ -90,33 +90,30 @@ class FormModal extends Component {
 
   render() {
     return (
-      <>
-        <FormModaStyle />
-        <Modal
-          size={this.state.size}
-          isOpen={this.state.showmodal}
-          toggle={this.state.toggleit}
-          centered={true}
-          className={`modal-dialog myallrtt ${this.props.className}`}
-          backdrop="static"
-          keyboard={false}
-        >
-          {this.state.showCloseButton ? (
-            <ModalHeader
-              className="header_area_alert"
-              charcode="Y"
-              toggle={() => this.toggleit()}
-            >
-              <span className="alertmodal_title"> {this.state.title}</span>
-            </ModalHeader>
-          ) : (
-            <ModalHeader className="header_area_alert">
-              <span className="alertmodal_title"> {this.state.title}</span>
-            </ModalHeader>
-          )}
-          <ModalBody className="p-2">{this.state.message}</ModalBody>
-        </Modal>
-      </>
+      <Modal
+        size={this.state.size}
+        isOpen={this.state.showmodal}
+        toggle={this.state.toggleit}
+        centered={true}
+        className={`modal-dialog myallrtt ${this.props.className}`}
+        backdrop="static"
+        keyboard={false}
+      >
+        {this.state.showCloseButton ? (
+          <ModalHeader
+            className="header_area_alert"
+            charcode="Y"
+            toggle={() => this.toggleit()}
+          >
+            <span className="alertmodal_title"> {this.state.title}</span>
+          </ModalHeader>
+        ) : (
+          <ModalHeader className="header_area_alert">
+            <span className="alertmodal_title"> {this.state.title}</span>
+          </ModalHeader>
+        )}
+        <ModalBody className="p-2">{this.state.message}</ModalBody>
+      </Modal>
     );
   }
 }

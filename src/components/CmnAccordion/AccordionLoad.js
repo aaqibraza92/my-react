@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { GCommonStyle } from "../Layout/GCommonStyle";
 const AccordionLoad = ({ id, title, content }) => {
   const [showData, setshowData] = useState(false);
 
@@ -8,8 +7,34 @@ const AccordionLoad = ({ id, title, content }) => {
   };
   return (
     <>
-
-      <GCommonStyle/>
+      <style jsx="true">
+        {`
+          .accordionTrigger {
+            display: flex;
+            justify-content: space-between;
+            background: transparent;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border-right: none;
+            border-left: none;
+            border-top: none;
+            padding-left: 12px;
+            padding-right: 12px;
+            transition: all 0.2s ease-in 0s;
+          }
+          .accordionTrigger:hover {
+            background-color: #ddd;
+          }
+          .accContent {
+            padding: 20px 12px;
+          }
+          .triggerTitle {
+            font-size: 15px;
+            font-weight: bold;
+          }
+        `}
+      </style>
       <div className="accWrapper">
         <button
           id={"accordion_" + id}
@@ -48,9 +73,9 @@ const icons = {
             d="M18,7.5v21"
             fill="none"
             stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
           />
           <path
             id="Path_2"
@@ -58,9 +83,9 @@ const icons = {
             d="M7.5,18h21"
             fill="none"
             stroke="#000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
           />
         </g>
       </svg>
@@ -81,9 +106,9 @@ const icons = {
           transform="translate(-6 -16.5)"
           fill="none"
           stroke="#000"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="3"
         />
       </svg>
     </>

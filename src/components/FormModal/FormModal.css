@@ -1,15 +1,8 @@
-body .header_area_alert {
-    position: absolute;
-    right: -15px;
-    z-index: 1;
-    /* background-color: #282A3A !important; */
-    background-color: #fff !important;
-    width: 20px !important;
-    height: 20px !important;
-    padding: 23px !important;
-    border-radius: 50% !important;
-    top: -15px;
-  }
+.header_area_alert {
+    /* 18273bec */
+    background-color: #FFF !important;
+    color: #FFFFFF !important;
+}
 
 .header_area_alert button span {
     font-size: 20px !important;
@@ -24,19 +17,12 @@ body .header_area_alert {
 
 .modal-header .btn-close::after {
     content: '\02DF';
-    font-size: 49px;
+    font-size: 65px;
     font-weight: 100;
     line-height: .65;
-    color: #fff !important;
+    color: #000 !important;
     opacity: 1;
-    position: absolute;
-    top: 10px;
-    left: 11px;
-  }
-  .modal-header .btn-close:focus {
-    outline: none;
-    box-shadow: none;
-  }
+}
 
 .alertmodal_title{
     padding: 0;
@@ -55,6 +41,3 @@ body .header_area_alert {
     padding: 0.4rem !important;
     border-top: none !important;
 }
-.btn-close {
-    opacity: 1 !important;
-  }

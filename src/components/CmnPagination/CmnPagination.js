@@ -7,7 +7,7 @@ const CmnPagination = (props) => {
      
         <div className="d-flex align-items-center flex-wrap justify-content-end mb50">
         <div className="d-flex align-items-center flex-wrap">
-          <p className="fs14 colorBlack">Page {props.number} of {props.totalPage}</p>
+          <p className="fs16 colorBlack">Page {props.number} of {props.totalPage}</p>
           <ul className="d-flex align-items-center flex-wrap noUl ml15 pagi">
             <li>
               <GButton

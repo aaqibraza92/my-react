@@ -1,0 +1,9 @@
+.active{
+    color: var(--colorBlue);
+}
+
+.customer-aside-img{
+    background-image: url(../../../Assets/Img/Group53208.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
