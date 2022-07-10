@@ -1,16 +1,15 @@
 import axios from "axios"
-import Auth from "../Auth/Auth"
+import Auth from "./Auth/Auth"
 //pass new generated access token here
 const token = "Bearer "+Auth.getToken();
 
 //apply base url for axios
-const API_URL = "http://97.74.83.126:15357/api/"
+const API_URL = "http://thekingsaga.com:15457/api/"
 
 const axiosApi = axios.create({
   baseURL: API_URL,
 })
 
-// axiosApi.defaults.headers.common["Authorization"] = token
 axiosApi.defaults.headers.common["Authorization"] = token
 
 axiosApi.interceptors.response.use(
@@ -38,4 +37,32 @@ export async function del(url, config = {}) {
   return await axiosApi
     .delete(url, { ...config })
     .then(response => response.data)
+}
+
+export async function postformdata(url,data){
+  const finalurl=API_URL+url;
+  const options = {
+    method: "POST",
+   headers: {
+        "Content-Type": "multipart/form-data",
+        Accept: "application/json",
+        Authorization: token
+      },
+  };
+
+  return await axios.post(finalurl,data, options).then(response => response.data)
+}
+
+export async function putformdata(url,data){
+  const finalurl=API_URL+url;
+  const options = {
+    method: "PUT",
+   headers: {
+        "Content-Type": "multipart/form-data",
+        Accept: "application/json",
+        Authorization: token
+      },
+  };
+
+  return await axios.put(finalurl,data, options).then(response => response.data)
 }

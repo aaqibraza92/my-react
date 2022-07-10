@@ -1,8 +1,9 @@
 import GLocalStorage from "../Global/GLocalStorage";
-const loginauth_key = "zaaruuworkbench";
-const token_key1 = "zuid";
-const token_key2 = "zrole";
-const token_key3 = "ztoken";
+
+const loginauth_key = "bakimrandevu";
+const token_key1 = "buid";
+const token_key2 = "brole";
+const token_key3 = "btoken";
 const Auth = {
   setLoginAuth: (value) => {
     GLocalStorage.Add(loginauth_key, value);

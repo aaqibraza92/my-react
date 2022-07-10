@@ -8,7 +8,7 @@ import GLink from "./GLink";
 import GPasswordInput from "./GPasswordInput";
 import GButton from "./GButton";
 import GSpacing from "./GSpacing";
-import { userLogin } from "../../ApiHelpers/ApiMethod/ApiMethod";
+import { userLogin } from "../../Helpers/backend";
 
 const LoginWrapper = styled.div`
   h3 {
