@@ -4,17 +4,17 @@ import "./Counter.css";
 
 const Counter = () => {
   return (
-    <section className="bgDarkBlue pt100 pb100 mobPt40 mobPb40 mb100 ">
+    <section className="bgDarkBlue pt80 pb80 mobPt40 mobPb40 mb80 ">
       <Container>
         <div className="text-center">
-          <div className="mb40 mobMb15">
-            <h2 className="fBold colorWhite mb20">Building Communities</h2>
-            <p className="colorWhite width62 mx-auto mobWidth100 tabWidth100 tabLgWidth100 mb0">
-              At Ahlookin, we’re supporting the local economy and connecting
-              communities. We connect dreamers with doers; local professionals
-              with busy people, thereby assisting micro and small businesses
-              across the country. We believe this approach will give everyone a
-              fair opportunity to be successful.
+          <div className="mb60 mobMb15">
+            <h2 className="fBold colorWhite mb20">
+              Can't find what you're looking for?
+            </h2>
+            <p className="colorWhite width62 mx-auto mobWidth100 tabWidth100 tabLgWidth100">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the specimen book.
             </p>
           </div>
           <section className="width75 mx-auto mobWidth100">
@@ -22,7 +22,7 @@ const Counter = () => {
               <Col lg={4} md={4} xs={4}>
                 <section>
                   <div className="fs50 colorBlue fBold mobfs30">6m+</div>
-                  <p className="colorWhite mb0">
+                  <p className="colorWhite">
                     Monthly <br /> active on Bluebis
                   </p>
                 </section>
@@ -30,7 +30,7 @@ const Counter = () => {
               <Col lg={4} md={4} xs={4}>
                 <section>
                   <div className="fs50 colorBlue fBold mobfs30">10k+</div>
-                  <p className="colorWhite mb0">
+                  <p className="colorWhite">
                     Experts <br /> on Bluebis
                   </p>
                 </section>
@@ -38,7 +38,7 @@ const Counter = () => {
               <Col lg={4} md={4} xs={4}>
                 <section>
                   <div className="fs50 colorBlue fBold mobfs30">$2b+</div>
-                  <p className="colorWhite mb0">
+                  <p className="colorWhite">
                     Paid out <br /> to expertss
                   </p>
                 </section>

@@ -1,4 +1,5 @@
 import React from "react";
+import { CardText } from "reactstrap";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -34,7 +35,7 @@ const Wrapper = styled.div`
 `;
 const GInfoBox = ({
   imageURL = "",
-  icon = "",
+  icon = Icon.dummy,
   label = "Lorem Ipsum",
   align="center",
   iconWidth=48,

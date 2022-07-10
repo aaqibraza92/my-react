@@ -8,8 +8,7 @@ import GLink from "./GLink";
 import GPasswordInput from "./GPasswordInput";
 import GButton from "./GButton";
 import GSpacing from "./GSpacing";
-import AlertModal from "../AlertModal/AlertModal";
-import $ from "jquery";
+import { userLogin } from "../../ApiHelpers/ApiMethod/ApiMethod";
 
 const LoginWrapper = styled.div`
   h3 {
@@ -18,66 +17,52 @@ const LoginWrapper = styled.div`
   }
 `;
 
-const GLogin = (props) => {
-  const [dataState, setDataState] = useState(
-    props.state || {
-      userid: "",
-      password: "",
-    }
-  );
+const GLogin = () => {
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
+  const [myname, setmyname] = useState("");
 
-  const submitCall = () => {
-    if (dataState) {
-      if (dataState.userid.length < 4) {
-        return AlertModal.show("Please enter a valid email address.");
-      }
-      if (dataState.password.length < 8) {
-        return AlertModal.show(
-          "To protect your account your password needs to be between 8 and 30 character long and contains 1 upper-case letter and a number."
-        );
-      }
-    } else {
-      return alert(
-        "please set state in login component. component will use props.state to manage userid and password."
-      );
-    }
-    if (props.submitCall) {
-      props.submitCall(dataState);
-    }
+  const onSubmit = () => {
+    const iData = {
+      username: email,
+      password: password,
+    };
+    userLogin(iData).then((res)=>{
+      console.log(res);
+      localStorage.setItem("myToken",res.data.token);
+    });
   };
+
+  const locally=()=>{
+    localStorage.setItem("aaqikey","My name is aaqib raza qadri");
+    var keyname=localStorage.getItem("aaqikey");
+    localStorage.removeItem("aaqikey");
+    setmyname(keyname);
+  }
 
   return (
     <LoginWrapper>
+
+      <button onClick={locally}>
+        Local
+      </button>
+      <h1>{myname}</h1>
       <h3>Log In Account</h3>
       <GIconInput
-        id="useridinput"
-        label="Email *"
+        label="Email/mobile number *"
         type="email"
         name="email"
-        placeholder="Enter email address"
-        value={dataState.userid}
-        onChange={(e) => setDataState({ ...dataState, userid: e.target.value })}
-        onKeyUp={(e) => {
-          if (e.keyCode === 13) {
-            $("#paswwordinput").focus();
-          }
-        }}
+        placeholder="Enter email or Mobile number"
+        value={email}
+        onChange={(e) => setemail(e.target.value)}
       />
 
       <GPasswordInput
-        id="paswwordinput"
         label="Password"
         name="password"
+        value={password}
         placeholder="Enter password"
-        value={dataState.password}
-        onChange={(e) =>
-          setDataState({ ...dataState, password: e.target.value })
-        }
-        onKeyUp={(e) => {
-          if (e.keyCode === 13) {
-            submitCall();
-          }
-        }}
+        onChange={(e) => setpassword(e.target.value)}
       />
 
       <GSpacing marginTop="10px" marginBottom="10px">
@@ -85,16 +70,13 @@ const GLogin = (props) => {
           <div>
             <GCheckbox name="remember" id="remember" label="Remember me" />
           </div>
-
           <div>
-            <GLink to="/forget" text="Forgot Password" />
+            <GLink to="#" text="Forgot Password" />
           </div>
         </GAlign>
       </GSpacing>
 
-      <GButton onClick={submitCall} width="100%">
-        Log In
-      </GButton>
+      <GButton onClick={onSubmit} width="100%">Log In</GButton>
     </LoginWrapper>
   );
 };

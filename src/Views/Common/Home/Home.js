@@ -1,92 +1,95 @@
-import React from "react";
-import Categories from "./Categories";
-// import About from "./About";
-import { Container, Row, Col } from "reactstrap";
-import "./Home.css";
-import HomeBanner from "./HomeBanner";
-import HomeSlider from "./HomeSlider";
-// import HappyCustomer from "./HappyCustomer";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Container } from "reactstrap";
+import Svg from "../../../Assets/Svg/Svg";
+import CmnAccordion from "../../../Components/CmnAccordion/CmnAccordion";
 import GButton from "../../../Components/GComponents/GButton";
-import TopServices from "./TopServices";
-import Price from "./Price";
-import WorkCards from "./WorkCards";
-import HappyCustomer from "./HappyCustomer";
-import "../../../../node_modules/slick-carousel/slick/slick.css";
-import "../../../../node_modules/slick-carousel/slick/slick-theme.css";
-import GHeroSection from "../../../Components/GComponents/GHeroSection/GHeroSection";
+import GIconInput from "../../../Components/GComponents/GIconInput";
+import GInput from "../../../Components/GComponents/GInput";
+import GSwitchTab from "../../../Components/GComponents/GSwitchTab";
+import GTextarea from "../../../Components/GComponents/GTextarea";
+import GIconLabelHorizontal from "../../../Components/GComponents/GIconLabelHorizontal";
+import GSectionTitle from "../../../Components/GSectionTitle";
+import GIconLabelVertical from "../../../Components/GComponents/GIconLabelVertical";
+import GInfoBox from "../../../Components/GInfoBox";
+import GAccordion from "../../../Components/GComponents/GAccordion/GAccordion";
+import HTTP from "../../../Helpers/Api/Api";
+
+// import About from "./About";
 
 const Home = (props) => {
+  var history = useHistory();
+  const Userdata = {
+    name: "Ravi Verma",
+    contact: "9030986754",
+  };
+
+  const [mydata, setmydata] = useState(null);
+
+  useEffect(() => {
+    loadData().then((res) => {
+      setmydata(res);
+      console.log("onloaddd" , res);
+    });
+  }, []);
+
+  const loadData = async () => {
+    let result = "";
+    try {
+      await HTTP.get("https://cat-fact.herokuapp.com/facts/").then((res) => {
+        console.log("api data", res);
+        result = res;
+        return result;
+      });
+    } catch (e) {}
+    return result;
+  };
 
   return (
     <>
-      {/* <h1>Home page</h1>
-      <button
-        onClick={(e) => {
-          history.push({
-            pathname: "/terms-conditions",
-            search: "?the=search",
-            state: { Userdata: Userdata },
-          });
-        }}
-      >
-        Click me
-      </button> */}
-      <GHeroSection/>
-      <HomeBanner />
-      <HomeSlider />
-      <Categories />
-      <WorkCards />
-      <Guarantee />
-      <HappyCustomer/>
-      <Price />
-      <TopServices />
-      <TODO />
+      <Container>
+        <GAccordion
+          data={[
+            {
+              id: 1,
+              title: "lorem ipsum",
+              content: "lorem ipsum data asdas asd asd asd asd asd ",
+            },
+            {
+              id: 2,
+              title: "lorem ipsum",
+              content: "lorem ipsum data asdas asd asd asd asd asd ",
+            },
+            {
+              id: 3,
+              title: "lorem ipsum",
+              content: "lorem ipsum data asdas asd asd asd asd asd ",
+            },
+          ]}
+        />
+
+        {
+          localStorage.getItem("myToken")!==null &&
+          <>
+            <h1>Home page</h1>
+          <button
+            onClick={(e) => {
+              history.push({
+                pathname: "/terms-conditions",
+                search: "?the=search",
+                state: { Userdata: Userdata },
+              });
+            }}
+          >
+            Click me
+          </button>
+          </>
+        
+        }
+      
+      </Container>
     </>
   );
 };
 
 export default Home;
-
-const Guarantee = () => {
-  return (
-    <>
-      <section className="need-done mb80">
-        <Container>
-          <Row className="align-items-center">
-            <Col lg={6}>
-              <div className="width81 mobWidth100">
-                <h2 className="colorWhite fBold">100% Happiness Guarantee!</h2>
-                <p className="colorWhite">
-                  Your complete satisfaction is our ultimate quality benchmark.
-                  That's why every Whizz service is assured with our 100%
-                  Happiness Guarantee.
-                </p>
-                <p className="colorWhite">
-                  This means that if you are in any way dissatisfied with your
-                  service, we will have it amended for you - completely free!
-                </p>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-    </>
-  );
-};
-
-const TODO = () => {
-  return (
-    <>
-      <section className="todo pt120 pb120">
-        <Container>
-          <div className="text-center">
-            <h2 className="colorWhite fBold mb30">
-              Have something to do? Get it done today.
-            </h2>
-            <GButton border="1px solid #fff" color="#fff" backgroundColor="transparent" className="">Get Quote Now</GButton>
-          </div>
-        </Container>
-      </section>
-    </>
-  );
-};

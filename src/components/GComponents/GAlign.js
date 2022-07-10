@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
 const GAlign = styled.div`
-@media only screen and (max-width: 767px) {
- flex-wrap: ${(props)=>{
-   return props.mobWrap ? props.mobWrap : "nowrap"
- }}
-}
   display: flex;
   flex: 1;
   width: 100%;

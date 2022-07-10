@@ -5,7 +5,7 @@ import "./CustomerAccountAside.css";
 const CustomerAccountAside = () => {
   return (
     <>
-      <aside className="sticky mb30 bgGrey pt30 pb30 width75 mobWidth100 tabWidth100 tabLgWidth100">
+      <aside className="sticky mb30 bgGrey pt30 pb30 width75 mobWidth100">
         <div className="noUl taskAside pl30 pr30">
           <NavLink
             to="/customer/profile/userprofile"
@@ -69,17 +69,18 @@ const CustomerAccountAside = () => {
             Transactions
           </NavLink>
           <NavLink
-            to="/customer/profile/referral"
+            to="#"
             className="mb10 position-relative colorBlack fs16 d-block"
             activeClassName="active"
           >
-            Referral Bonus
+            Log out
           </NavLink>
-
-          <div className="customer-aside-img text-center pt18 pb18">
-            <div className="mb7">{Svg.addpeople}</div>
-            <span className="fs16 colorWhite">Refer Friends & Earn</span>
-          </div>
+          <NavLink to="#" className="img-fluid">
+            <div className="customer-aside-img text-center pt18 pb18">
+              <div className="mb7">{Svg.addpeople}</div>
+              <span className="fs16 colorWhite">Refer Friends & Earn</span>
+            </div>
+          </NavLink>
         </div>
       </aside>
     </>

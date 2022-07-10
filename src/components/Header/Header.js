@@ -8,38 +8,34 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import Img from "../../Assets/Img/Img";
 // import GButton from "../GComponents/GButton";
 import GButton from "../GComponents/GButton";
 import GIconInput from "../GComponents/GIconInput";
 import Svg from "../../Assets/Svg/Svg";
-import Auth from "../../Helpers/Auth/Auth";
-import AuthHelper from "../../Helpers/Auth/AuthHelper";
 
 const Header = () => {
-  const history = useHistory();
   useEffect(() => {}, []);
   return (
-    <header className="siteHeader bgWhite pt15 pb15 topUp">
-      <Container>
-        <Row className="align-items-center">
-          {Auth.isUserLoggedIn() ? (
-            <WebRightSideHeaderContentWithLogin />
-          ) : (
+    <div>
+      <header className="siteHeader bgWhite pt15 pb15 topUp">
+        <Container>
+          <Row className="align-items-center">
             <WebRightSideHeaderContentWithoutLogin />
-          )}
-        </Row>
-      </Container>
-    </header>
+
+            {/* <WebRightSideHeaderContentWithLogin /> */}
+          </Row>
+        </Container>
+      </header>
+    </div>
   );
 };
 
 export default Header;
 
 const WebRightSideHeaderContentWithoutLogin = () => {
-  const history = useHistory();
   return (
     <>
       <Col lg={6} xs={6}>
@@ -52,8 +48,8 @@ const WebRightSideHeaderContentWithoutLogin = () => {
           {/* Custom Added  Start*/}
           <div className="input-width dNoneMd dNoneXs dNoneLg">
             <GIconInput
-              className="pb0"
-              paddingBottom="0px"
+            className="pb0"
+            paddingBottom="0px"
               placeholder="Search Service provider & service you need"
               iconLeft={Svg.search}
             ></GIconInput>
@@ -87,22 +83,21 @@ const WebRightSideHeaderContentWithoutLogin = () => {
               </Link>
             </li>
             <li>
-              <Link to="#" className="f16 colorBlack mr20 fLight">
+              <Link
+                to="/provider/signup"
+                className="f16 colorBlack mr20 fLight"
+              >
                 Post a task
               </Link>
             </li>
             <li>
-              <Link to="/login" className="f16 colorBlack mr20 fLight">
+              <Link to="/" className="f16 colorBlack mr20 fLight">
                 Login/Signup
               </Link>
             </li>
           </ul>
 
-          <GButton
-            onClick={(e) => {
-              history.push("/provider/signup");
-            }}
-          >
+          <GButton>
             <span className="d-none d-lg-block">Become a Provider</span>
           </GButton>
         </div>
@@ -112,24 +107,23 @@ const WebRightSideHeaderContentWithoutLogin = () => {
 };
 
 const WebRightSideHeaderContentWithLogin = () => {
-  const history = useHistory();
   return (
     <>
       <Col lg={6} xs={6}>
         <div className="d-flex align-items-center flex-wrap">
           <div className="logo mr20">
             <Link to="/">
-              <img src={Img.logo.default} alt="" />
+              <img src={Img.logo} alt="" />
             </Link>
           </div>
           {/* Custom Added  Start*/}
           <div className="input-width dNoneMd dNoneXs dNoneLg">
             <GIconInput
-              className="pb0"
-              text="Lorem"
+             className="pb0"
+             text="Lorem"
               paddingBottom="0px"
               placeholder="Search Service provider & service you need"
-              iconLeft={Svg.search}
+              iconLeft={Svg}
             ></GIconInput>
           </div>
           {/* Custom Added  End*/}
@@ -140,7 +134,7 @@ const WebRightSideHeaderContentWithLogin = () => {
       <Col lg={6} xs={6} className="d-flex justify-content-end">
         <ul className="noUl mb0 d-flex align-items-center flex-wrap dNoneXl">
           <li className="mr20">
-            <span>{Svg.search}</span>
+            <span>{Svg.Search}</span>
           </li>
           <li>
             <Link to="#" className="f16 colorBlack mr20">
@@ -158,15 +152,10 @@ const WebRightSideHeaderContentWithLogin = () => {
           {Svg.bar}
         </button>
 
-        {AuthHelper.getUserRoleFromAuth() === "Customer" && <CustomerNav />}
-        {AuthHelper.getUserRoleFromAuth() === "Provider" && <ProviderNav />}
-        {AuthHelper.getUserRoleFromAuth() === "Admin" && (
-          <>
-            <GButton onClick={(e) => history.push("/admin/king/dashboard")}>
-              Dashboard
-            </GButton>
-          </>
-        )}
+        {/* Customer Navigation */}
+        {/* <CustomerNav /> */}
+        {/* Provider Navigation */}
+        <ProviderNav />
       </Col>
     </>
   );
@@ -202,10 +191,9 @@ const CustomerNav = () => {
             <div className="header_profile_img mr10">
               <img className="radius100 w-100" alt="" src={Img.group7359} />
             </div>
-            <div className="colorBlack fw500 fs16 text-capitalize">
-              {Auth.getLoginAuth().firstname +
-                " " +
-                Auth.getLoginAuth().lastname}
+            <div className="colorBlack fw500 fs16">
+              {/* {Auth.getLoginAuth()[0].name} */}
+              Praveen Solanki
               <span className="ml5">{Svg.downArrowSmall}</span>
             </div>
           </div>
@@ -215,7 +203,7 @@ const CustomerNav = () => {
             <ul className="noBg noUl mb0">
               <li className="mb10">
                 <Link
-                  to="/customer/profile/userprofile"
+                  to="/customer/update-account-profile"
                   className="fs15 d-block w-100 colorPara"
                 >
                   My Profile
@@ -248,8 +236,18 @@ const ProviderNav = () => {
     <div className="d-flex align-items-center flex-wrap justify-content-end dNoneMd dNoneXs dNoneLg">
       <ul className="noUl mb0 d-flex align-items-center flex-wrap ">
         <li>
-          <Link to="/provider/dashboard" className="f16 colorBlack mr20">
-            Dashboard
+          <Link to="#" className="f16 colorBlack mr20">
+            Services
+          </Link>
+        </li>
+        <li>
+          <Link to="#" className="f16 colorBlack mr20">
+            Post a Task
+          </Link>
+        </li>
+        <li>
+          <Link to="#" className="f16 colorBlack mr20">
+            My Tasks
           </Link>
         </li>
         <li>
@@ -265,11 +263,9 @@ const ProviderNav = () => {
             <div className="header_profile_img mr10">
               <img className="radius100 w-100" alt="" src={Img.group7359} />
             </div>
-            <div className="colorBlack fw500 fs16 text-capitalize">
+            <div className="colorBlack fw500 fs16">
               {/* {Auth.getLoginAuth()[0].name} */}
-              {Auth.getLoginAuth().firstname +
-                " " +
-                Auth.getLoginAuth().lastname}
+              Praveen Solanki
               <span className="ml5">{Svg.downArrowSmall}</span>
             </div>
           </div>
@@ -278,10 +274,7 @@ const ProviderNav = () => {
           <DropdownItem>
             <ul className="noBg noUl mb0">
               <li className="mb10">
-                <Link
-                  to="/provider/profile/busniess-profile"
-                  className="fs15 d-block w-100 colorPara"
-                >
+                <Link to="" className="fs15 d-block w-100 colorPara">
                   My Profile
                 </Link>
               </li>
@@ -295,7 +288,7 @@ const ProviderNav = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/logout" className="fs15 d-block w-100 colorPara">
+                <Link to="" className="fs15 d-block w-100 colorPara">
                   Logout
                 </Link>
               </li>

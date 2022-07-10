@@ -12,9 +12,11 @@ import {
 import Img from "../../../Assets/Img/Img";
 import Svg from "../../../Assets/Svg/Svg";
 import GAlign from "../../../Components/GComponents/GAlign";
+import GSection from "../../../Components/GComponents/GSection";
 
 const ActiveTask = () => {
-    return (
+  return (
+    <GSection background="#fff">
       <div>
         <Container>
           <Row className="bBottom pt18 pb18">
@@ -45,8 +47,8 @@ const ActiveTask = () => {
                     </p>
                     <p className="fs16 mb5 colorPara">
                       It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking at
-                      its layout...
+                      distracted by the readable content of a page when looking
+                      at its layout...
                     </p>
                   </div>
                 </Col>
@@ -76,7 +78,7 @@ const ActiveTask = () => {
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-  
+
                   <span className="fs14 pl10 pr10 pt5 radius4 pb5 borderYellow">
                     Awaiting Approval
                   </span>
@@ -86,7 +88,8 @@ const ActiveTask = () => {
           </Row>
         </Container>
       </div>
-    );
-  };
+    </GSection>
+  );
+};
 
-  export default ActiveTask;
+export default ActiveTask;

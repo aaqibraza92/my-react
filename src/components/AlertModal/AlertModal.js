@@ -104,7 +104,7 @@ class AlertModal extends Component {
           <Button
             size="sm"
             style={{
-              backgroundColor: "#47BBD0",
+              backgroundColor: "#EC7523",
               color: "white",
               fontFamily: "Arial",
               padding: "5px 25px",

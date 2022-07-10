@@ -57,7 +57,7 @@ const Footer = (props) => {
       )} */}
 
       {!props.footer && (
-        <footer className="bgBlack pt60 pb10">
+        <section className="bgBlack pt60 pb10">
           <Container className="mb30 ">
             <Row>
               <Col lg={3}>
@@ -77,9 +77,9 @@ const Footer = (props) => {
                       <li className="mb8"><Link to="#" className="fcolor">Sign Up </Link></li>
                       <li className="mb8"><Link to="#" className="fcolor">Become a Provider</Link></li>
                       <li className="mb8"><Link to="#" className="fcolor">All Services </Link></li>
-                      <li className="mb8"><Link to="#" className="fcolor">Deals & Discounts</Link></li>
-                      <li className="mb8"><Link to="#" className="fcolor">Get a Quote </Link></li>
-                      <li className="mb8"><Link to="#" className="fcolor">Career Opportunities </Link></li>
+                      <li className="mb8"><Link to="/customer/dashboard" className="fcolor">Customer Dashboard</Link></li>
+                      <li className="mb8"><Link to="/customer/profile/userprofile" className="fcolor">User Profile </Link></li>
+                      <li className="mb8"><Link to="/customer/profile/billing" className="fcolor">Billing </Link></li>
                       <li className="mb8"><Link to="#" className="fcolor">Blog </Link></li>
                       <li className="mb8"><Link to="/about" className="fcolor">About Us </Link></li>
                     </ul>
@@ -87,11 +87,12 @@ const Footer = (props) => {
                   <Col lg={3} xs={6} md={3}>
                     <h6 className="fs18  fw700 mb16 colorWhite">Support</h6>
                     <ul className="noUl fs16">
-                    <li className="mb8"><Link to="#" className="fcolor">Help </Link></li>
+                    <li className="mb8"><Link to="/" className="fcolor">Login </Link></li>
+                      <li className="mb8"><Link to="/customer/profile/favourite" className="fcolor">Favourite </Link></li>
                       <li className="mb8"><Link to="#" className="fcolor">Contact Us</Link></li>
                       <li className="mb8"><Link to="#" className="fcolor">FAQ</Link></li>
                       <li className="mb8"><Link to="#" className="fcolor">How it Works</Link></li>
-                      <li className="mb8"><Link to="#" className="fcolor">How to create a project</Link></li>
+                      <li className="mb8"><Link to="/cookies-policy" className="fcolor">Cookies Policy</Link></li>
                     </ul>
                   </Col>
                   <Col lg={3} xs={6} md={3}>
@@ -159,7 +160,7 @@ const Footer = (props) => {
               </p>
             </Container>
           </div>
-        </footer>
+        </section>
       )}
     </>
   );

@@ -1,33 +1,14 @@
 import React from "react";
 import { Container } from "reactstrap";
-import Svg from "../../../Assets/Svg/Svg";
-import GSectionTitle from "../../../Components/GSectionTitle";
+import GSection from "../../../Components/GComponents/GSection";
 
 const CancellationPolicy = () => {
   return (
+    <GSection background="#fff">
     <div>
-      <section className="bgDarkBlue pt60 pb60 mb100">
-        <GSectionTitle
-          title="Cancellation Policy"
-          titleSize="45px"
-          titlecolor="#fff"
-          align="center"
-          subtitlecolor="#fff"
-          fontWeight="Bold"
-        ></GSectionTitle>
-        <div className="text-center">
-          <span className="colorWhite fs16">Home </span>
-          <span className="ml15 mr15">{Svg.greaterthan}</span>
-          <span className="colorWhite opacity80 fs16">
-            Cancellation Policy{" "}
-          </span>
-        </div>
-      </section>
       <Container className="mb60">
-        <section className="mb36">
-          <h2 className="fs28 mb20 colorLightBlack fBold">
-            Ipsum dolor sit amet,
-          </h2>
+        <section className="mb20">
+          <h2 className="fs28 mb15 colorLightBlack fw700">Ipsum dolor sit amet,</h2>
           <p className="fs16 colorPara">
             The protection of your privacy and Personal Data is of utmost
             importance to us. We process and protect the Personal Data you give
@@ -39,11 +20,11 @@ const CancellationPolicy = () => {
           </p>
         </section>
 
-        <section className="pb6 mb21 bBottom">
-          <h2 className="fs24 mb20 colorLightBlack fBold">
+        <section className="pb6 mb15 bBottom">
+          <h2 className="fs24 mb15 colorLightBlack fw700">
             1. Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </h2>
-          <p className="fs16 mb46 colorPara">
+          <p className="fs16 mb25 colorPara">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point
             of using Lorem Ipsum is that it has a more-or-less normal
@@ -55,7 +36,7 @@ const CancellationPolicy = () => {
             years, sometimes by accident, sometimes on purpose (injected humour
             and the like).
           </p>
-          <ul className="fs16 colorPara lh35 mb26">
+          <ul className="fs16 colorPara lh30">
             <li>
               Don’t create pledging schemes; don’t contact other creators to
               have a pledge-for-a-pledge kind of trade deal.
@@ -83,12 +64,12 @@ const CancellationPolicy = () => {
           </ul>
         </section>
 
-        <section className="bBottom mb20">
-          <div className="mb54">
-            <h2 className="fs24 mb19 colorLightBlack fBold">
+        <section className="bBottom mb15 pb20">
+          <div className="mb30">
+            <h2 className="fs24 mb15 colorLightBlack fw700">
               2. Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit
             </h2>
-            <p className="fs16 colorPara mb0">
+            <p className="fs16 colorPara">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
@@ -102,9 +83,9 @@ const CancellationPolicy = () => {
             </p>
           </div>
 
-          <div className="mb54">
-            <h4 className="fs18 mb14 colorLightBlack">2.1 Technical Data</h4>
-            <p className="fs16 colorPara mb0">
+          <div className="mb30">
+            <h4 className="fs18 mb10 colorLightBlack">2.1 Technical Data</h4>
+            <p className="fs16 colorPara">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
@@ -118,10 +99,8 @@ const CancellationPolicy = () => {
             </p>
           </div>
 
-          <div className="mb54">
-            <h4 className="fs18 mb14 colorLightBlack">
-              2.2 Using the Services
-            </h4>
+          <div className="mb30">
+            <h4 className="fs18 mb10 colorLightBlack">2.2 Using the Services</h4>
             <p className="fs16 mb0 colorPara">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -130,26 +109,17 @@ const CancellationPolicy = () => {
               survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchanged.
             </p>
-            <a
-              href="https://www.privacyshield.gov/welcome"
-              className="colorPara"
-            >
+            <a href="https://www.privacyshield.gov/welcome" className="colorPara">
               https://www.privacyshield.gov/welcome
-            </a>
-            <br />
-            <a
-              href="https://ec.europa.eu/info/law/law-topic/data-protectin/data-transfers-outside-eu/model-contracts-transfer-personal-data-third-countries_en"
-              className="colorPara"
-            >
+            </a><br/>
+            <a href="https://ec.europa.eu/info/law/law-topic/data-protectin/data-transfers-outside-eu/model-contracts-transfer-personal-data-third-countries_en" className="colorPara">
               https://ec.europa.eu/info/law/law-topic/data-protectin/data-transfers-outside-eu/model-contracts-transfer-personal-data-third-countries_en
             </a>
           </div>
 
-          <div className="mb54">
-            <h4 className="fs18 mb14 colorLightBlack">
-              2.3 Improvement of Platform and Services
-            </h4>
-            <p className="fs16 colorPara mb0">
+          <div className="mb30">
+            <h4 className="fs18 mb10 colorLightBlack">2.3 Improvement of Platform and Services</h4>
+            <p className="fs16 colorPara">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
@@ -164,11 +134,11 @@ const CancellationPolicy = () => {
           </div>
         </section>
 
-        <section className="bBottom mb21">
-          <h2 className="fs24 colorLightBlack fBold mb19">
+        <section className="bBottom pb30 mb15">
+          <h2 className="fs24 colorLightBlack fw700">
             3. Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit
           </h2>
-          <p className="fs16 colorPara mb54">
+          <p className="fs16 colorPara">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point
             of using Lorem Ipsum is that it has a more-or-less normal
@@ -183,7 +153,7 @@ const CancellationPolicy = () => {
         </section>
 
         <section>
-          <h2 className="fs24 colorLightBlack fBold">4. Data Storing</h2>
+          <h2 className="fs24 colorLightBlack fw700">4. Data Storing</h2>
           <p className="fs16 colorPara">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point
@@ -199,6 +169,8 @@ const CancellationPolicy = () => {
         </section>
       </Container>
     </div>
+    </GSection>
+
   );
 };
 

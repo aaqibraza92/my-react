@@ -53,24 +53,11 @@ const HTTP = {
         "Access-Control-Allow-Origin": "*",
         Authorization: "Bearer " + token,
       },
-      proxy: {
-        host: "3.139.66.229",
-        port: 8000,
-      },
+
     };
-    await axios.get(finalurl, config).then((result) => {
-      if (result.data) {
-        if (result.data.status.toString() === "200") {
-          notification &&
-            notify.show(result.data.msg, "custom", 3000, success_notification);
-          response = result.data;
+    await axios.get(url, config).then((result) => {
+      response = result.data;
           return response;
-        } else {
-          response = result.data;
-        }
-      } else {
-        response = result.data;
-      }
     });
     return response;
   },
@@ -108,8 +95,7 @@ const HTTP = {
     });
     return response;
   },
-
-  post: async (url, data, checkauth, token = "", notifcation = true) => {
+  post: async (url, data, checkauth, notification, token = "") => {
     let response = "";
     const finalurl = API.baseurl + url;
     let config = {
@@ -128,17 +114,17 @@ const HTTP = {
       };
     }
     await axios.post(finalurl, data, config).then((result) => {
-      if (result && result.status) {
-        if (result.status.toString() === "200") {
+      if (result.data) {
+        if (result.data.status.toString() === "200") {
+          notification &&
+            notify.show(result.data.msg, "custom", 3000, success_notification);
           response = result.data;
-          notifcation && Notify(result.data.message, false);
-        } else if (result.status.toString() === "201") {
-          Notify(result.data.message, true);
-          response = result.data;
+          return response;
         } else {
-          Notify(result.data.message, true);
           response = result.data;
         }
+      } else {
+        response = result.data;
       }
     });
     return response;
@@ -175,7 +161,7 @@ const HTTP = {
     });
     return response;
   },
-  postimage: async (url, data, checkauth, token = "", notification = true) => {
+  postimage: async (url, data, checkauth, notification, token = "") => {
     let response = "";
     const finalurl = API.baseurl + url;
     let config = {
@@ -192,17 +178,17 @@ const HTTP = {
       };
     }
     await axios.post(finalurl, data, config).then((result) => {
-      if (result && result.status) {
-        if (result.status.toString() === "200") {
+      if (result.data) {
+        if (result.data.status.toString() === "200") {
+          notification &&
+            notify.show(result.data.msg, "custom", 3000, success_notification);
           response = result.data;
-          notification && Notify(result.data.message, false);
-        } else if (result.status.toString() === "201") {
-          Notify(result.data.message, true);
-          response = result.data;
+          return response;
         } else {
-          Notify(result.data.message, true);
           response = result.data;
         }
+      } else {
+        response = result.data;
       }
     });
     return response;

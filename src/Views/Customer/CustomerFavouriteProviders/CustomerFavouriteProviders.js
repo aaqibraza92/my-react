@@ -3,6 +3,7 @@ import CustomerAccountAside from "../CustomerAccountAside/CustomerAccountAside";
 import { Col, Container, Row } from "reactstrap";
 import Img from "../../../Assets/Img/Img";
 import Svg from "../../../Assets/Svg/Svg";
+import GAlign from "../../../Components/GComponents/GAlign";
 import GButton from "../../../Components/GComponents/GButton";
 
 const CustomerFavouriteProviders = () => {
@@ -12,10 +13,10 @@ const CustomerFavouriteProviders = () => {
       <section className="pt60 pb60">
         <Container>
           <Row>
-            <Col lg={4} md={4} xl={4}>
+            <Col lg={5} md={5} xl={4}>
               <CustomerAccountAside />
             </Col>
-            <Col lg={8} md={8} xl={8}>
+            <Col lg={7} md={7} xl={8}>
               <div className="pb6 borBottom">
                 <h3 className="fBold">Favourite Providers</h3>
               </div>
@@ -68,7 +69,7 @@ const FavouriteProvider = () => {
             <Col lg={3} xs={12}>
               <div>
                 <img
-                  className="img-fluid radius100 "
+                  className="img-fluid w-100 radius100 "
                   src={Img.rectangle14009}
                   alt=""
                 />
@@ -95,16 +96,7 @@ const FavouriteProvider = () => {
           {/* <GAlign align="right"> */}
           <div className="text-end">
             <p className="fs18 colorBlack mb10">$40/hr</p>
-            <GButton
-              backgroundColor="#fff"
-              color="#20272B"
-              border="1px solid #E8E9E9"
-              pb="2px"
-              pt="2px"
-              pl="13px"
-              pr="13px"
-              fs="14px"
-            >
+            <GButton backgroundColor="#fff" color="#20272B">
               View Profile
             </GButton>
             <p className="mt15 colorRed">Remove from favourite</p>

@@ -243,3 +243,9 @@ transition: all 0.2s ease-out 0s;
   -webkit-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
 }
+
+.noBtn{
+  background: transparent;
+  outline: none;
+  border: none;
+}

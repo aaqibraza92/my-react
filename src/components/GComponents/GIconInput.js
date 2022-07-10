@@ -1,16 +1,44 @@
 import React, { useEffect } from "react";
+import styled from "styled-components";
 import GInput from "./GInput";
 import GPosition from "./GPosition";
 import GSpacing from "./GSpacing";
 
+// const GInput = styled.input`
+//   background-color: ${(props) =>
+//     props.backgroundColor ? props.backgroundColor : "#FFF"};
+//   width: 100%;
+//   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+//   padding: ${(props) => (props.padding ? props.padding : ".5rem .8rem")};
+//   margin: ${(props) => (props.margin ? props.margin : "0rem")};
+//   border-radius: ${(props) =>
+//     props.borderRadius ? props.borderRadius : "3px"};
+//   display: block;
+//   border: 1px solid #e8e9e9;
+//   outline: none;
+//   color: ${(props) => (props.color ? props.color : "#000")};
+//   flex-direction: ${(props) => (props.direction ? props.direction : "row")};
+//   font-size: 17px;
+//   min-width: 100px;
+//   max-height: 45px;
+//   -webkit-transition: all 0.2s linear 0s;
+//   transition: all 0.2s linear 0s;
+//   padding-left: ${(props) => (props.iconLeft ? '38px' : "10px")};
+
+//   :focus {
+//     background-color: ${(props) =>
+//       props.hoverBgColor ? props.hoverBgColor : "#fff"};
+//     border: 1px solid #47bbd0;
+//   }
+// `;
+
 const GIconInput = (props) => {
   const onChange = (e) => {};
-  const onKeyUp = (e) => {};
-  const onKeyDown = (e) => {};
   const keyDown = (e) => {};
   const iconClick = (e) => {};
 
   useEffect(()=>{
+    console.log("aaa",props);
   },[])
 
   return (
@@ -84,12 +112,11 @@ const GIconInput = (props) => {
             placeholder={props.placeholder}
             iconLeft={props.iconLeft ? true : false}
             onChange={props.onChange || onChange}
-            onKeyUp={props.onKeyUp || onKeyUp}
-            onKeyDown={props.onKeyDown || onKeyDown}
             name={props.name}
             disabled={props.disabled}
             readOnly={props.readOnly}
             autoComplete={props.autoComplete || "Off"}
+            onKeyDown={props.onKeyDown || keyDown}
           />
           {props.iconRight && (
             <span

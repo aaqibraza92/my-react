@@ -3,9 +3,6 @@ import styled from "styled-components";
 
 const CheckboxWrapper = styled.div`
   display: block;
-  display: ${(props) => {
-    return props.display ? props.display : "inline-block";
-  }};
   input {
     padding: 0;
     height: initial;
@@ -18,7 +15,7 @@ const CheckboxWrapper = styled.div`
     transition: all 0.3s linear 0s;
   }
   input:checked + label::before {
-    background-color: #47bbd0;
+    background-color: #47BBD0;
   }
   input:checked + label:after {
     -webkit-transition: all 0.3s linear 0s;
@@ -27,10 +24,10 @@ const CheckboxWrapper = styled.div`
     content: "";
     display: block;
     position: absolute;
-    top: 6px;
-    left: 7px;
-    width: 5px;
-    height: 12px;
+    top: 4px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
     border: solid #fff;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
@@ -43,10 +40,10 @@ const CheckboxWrapper = styled.div`
     content: "";
     -webkit-appearance: none;
     background-color: transparent;
-    border: 2px solid #47bbd0;
+    border: 2px solid #47BBD0;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
       inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-    padding: 7px;
+    padding: 10px;
     display: inline-block;
     position: relative;
     vertical-align: middle;

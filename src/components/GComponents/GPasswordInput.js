@@ -26,7 +26,6 @@ const PasswordWrapper = styled.div`
 const GPasswordInput = (props) => {
   const [viewPassword, setViewPassword] = useState(false);
   const onChange = (e) => {};
-  const onKeyUp = (e) => {};
   const keyDown = (e) => {};
 
   return (
@@ -46,7 +45,6 @@ const GPasswordInput = (props) => {
           placeholder={props.placeholder}
           iconLeft={props.iconLeft ? true : false}
           onChange={props.onChange || onChange}
-          onKeyUp={props.onKeyUp || onKeyUp}
           name={props.name}
           disabled={props.disabled}
           readOnly={props.readOnly}
@@ -73,8 +71,8 @@ const Icons = {
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="25"
+        height="25"
         viewBox="0 0 31.508 27"
       >
         <path
@@ -91,8 +89,8 @@ const Icons = {
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="25"
+        height="25"
         viewBox="0 0 31.5 21.234"
       >
         <path

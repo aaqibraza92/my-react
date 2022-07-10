@@ -3,56 +3,6 @@
   src: url("./Assets/Fonts/Helvitica/HelveticaNowDisplay-Regular.otf");
 }
 
-@font-face {
-  font-family: helvitica-bold;
-  src: url("./Assets/Fonts/Helvitica/HelveticaNowDisplay-Bold.otf");
+body,p,div,a,li,ul,span {
+  font-family: helvitica-regular;
 }
-
-@font-face {
-  font-family: helvitica-light;
-  src: url("./Assets/Fonts/Helvitica/HelveticaNowDisplay-Light.otf");
-}
-
-body,
-p,
-div,
-a,
-li,
-ul,
-span {
-  font-family: "helvitica-regular";
-}
-.admin_wrapper {
-  font-family: "Roboto" !important;
-}
-
-.adminFontBold {
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.adminFontRegular {
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 400;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;  
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-.pageWrapper {
-  min-height: 600px;
-  display: flex;
-  justify-content: center;
-}
-.contentWrapper {
-  min-height: 600px;
-}
-
