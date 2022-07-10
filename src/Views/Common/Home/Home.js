@@ -13,6 +13,7 @@ import GSectionTitle from "../../../Components/GSectionTitle";
 import GIconLabelVertical from "../../../Components/GComponents/GIconLabelVertical";
 import GInfoBox from "../../../Components/GInfoBox";
 import GAccordion from "../../../Components/GComponents/GAccordion/GAccordion";
+import { getAboutCompany, getSalonAmenities } from "../../../Helpers/backend";
 
 // import About from "./About";
 
@@ -21,10 +22,12 @@ const Home = (props) => {
   const [mydata, setmydata] = useState(null);
 
   useEffect(() => {
-  
+    getAboutCompany().then((res)=>{
+      console.log("aaqib",res);
+    })
   }, []);
 
-
+  
 
   return (
     <>

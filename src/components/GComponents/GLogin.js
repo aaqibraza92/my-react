@@ -9,6 +9,7 @@ import GPasswordInput from "./GPasswordInput";
 import GButton from "./GButton";
 import GSpacing from "./GSpacing";
 import { userLogin } from "../../Helpers/backend";
+import Auth from "../../Helpers/Auth/Auth";
 
 const LoginWrapper = styled.div`
   h3 {
@@ -30,6 +31,7 @@ const GLogin = () => {
     userLogin(iData).then((res)=>{
       console.log(res);
       localStorage.setItem("myToken",res.data.token);
+      Auth.setToken(res.data.token)
     });
   };
 

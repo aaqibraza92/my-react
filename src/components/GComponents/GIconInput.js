@@ -38,7 +38,6 @@ const GIconInput = (props) => {
   const iconClick = (e) => {};
 
   useEffect(()=>{
-    console.log("aaa",props);
   },[])
 
   return (
