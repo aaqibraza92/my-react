@@ -4,9 +4,7 @@ let getAboutCompInfo=[];
 const salonAboutCompRed=(state=getAboutCompInfo, {type, payload})=>{
     switch(type){
         case ABOUT_COMPANY_SUCCESS:
-            return{
-                getAboutCompInfo: payload,
-            };
+            return payload
             default: 
             return state;
     }

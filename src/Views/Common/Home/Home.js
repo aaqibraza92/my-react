@@ -14,23 +14,31 @@ import GIconLabelVertical from "../../../Components/GComponents/GIconLabelVertic
 import GInfoBox from "../../../Components/GInfoBox";
 import GAccordion from "../../../Components/GComponents/GAccordion/GAccordion";
 import { getAboutCompany, getSalonAmenities } from "../../../Helpers/backend";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { getAboutCompAction } from "../../../store/salon/getAboutCompany/actions";
 
 // import About from "./About";
 
 const Home = (props) => {
-  var history = useHistory();
-  const [mydata, setmydata] = useState(null);
 
   const dispatch=useDispatch();
-  dispatch(getAboutCompAction());
-
   useEffect(() => {
-    getAboutCompany().then((res)=>{
-      console.log("aaqib",res);
-    })
-  }, []);
+    dispatch(getAboutCompAction());
+  }, [dispatch]);
+
+  const salonAboutCompRed = useSelector((state) => {
+    return (
+      state &&
+      state.salonAboutCompRed
+    );
+  });
+
+  const [data, setdata] = useState(
+    salonAboutCompRed && salonAboutCompRed
+  );
+  useEffect(() => {
+    setdata(salonAboutCompRed && salonAboutCompRed);
+  }, [salonAboutCompRed]);
 
   
 
@@ -58,7 +66,9 @@ const Home = (props) => {
         />
 
         
-      
+      {
+        console.log("data",data)
+      }
       </Container>
     </>
   );
