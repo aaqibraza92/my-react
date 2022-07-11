@@ -14,12 +14,17 @@ import GIconLabelVertical from "../../../Components/GComponents/GIconLabelVertic
 import GInfoBox from "../../../Components/GInfoBox";
 import GAccordion from "../../../Components/GComponents/GAccordion/GAccordion";
 import { getAboutCompany, getSalonAmenities } from "../../../Helpers/backend";
+import { useDispatch } from "react-redux";
+import { getAboutCompAction } from "../../../store/salon/getAboutCompany/actions";
 
 // import About from "./About";
 
 const Home = (props) => {
   var history = useHistory();
   const [mydata, setmydata] = useState(null);
+
+  const dispatch=useDispatch();
+  dispatch(getAboutCompAction());
 
   useEffect(() => {
     getAboutCompany().then((res)=>{
