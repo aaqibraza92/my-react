@@ -12,6 +12,7 @@ import CustomerDashboard from "./Customer/CustomerDashboard/CustomerDashboard";
 import CustomerUserProfile from "./Customer/CustomerUserProfile/CustomerUserProfile";
 import CustomerBillingDetails from "./Customer/CustomerBillingDetails/CustomerBillingDetails";
 import CustomerFavouriteProviders from "./Customer/CustomerFavouriteProviders/CustomerFavouriteProviders";
+import Logout from "../Components/Header/Logout";
 
 const Pages = {
   HomePage: Home,
@@ -28,6 +29,7 @@ const Pages = {
   CustomerUserProfilePage: CustomerUserProfile,
   CustomerBillingDetailsPage: CustomerBillingDetails,
   CustomerFavouriteProvidersPage: CustomerFavouriteProviders,
+  Logout: Logout
 
 };
 export default Pages;

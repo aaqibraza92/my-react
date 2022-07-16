@@ -10,6 +10,8 @@ import GButton from "./GButton";
 import GSpacing from "./GSpacing";
 import { userLogin } from "../../Helpers/backend";
 import Auth from "../../Helpers/Auth/Auth";
+import { useSelector,useDispatch  } from "react-redux";
+import { loginInfoRedux } from "../../store/authentication/login/actions";
 
 const LoginWrapper = styled.div`
   h3 {
@@ -19,20 +21,28 @@ const LoginWrapper = styled.div`
 `;
 
 const GLogin = () => {
+  const dispatch= useDispatch();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [myname, setmyname] = useState("");
+
+  const successMsg=(val)=>{
+    console.log("resss login",val);
+  }
 
   const onSubmit = () => {
     const iData = {
       username: email,
       password: password,
     };
-    userLogin(iData).then((res)=>{
-      console.log(res);
-      localStorage.setItem("myToken",res.data.token);
-      Auth.setToken(res.data.token)
-    });
+
+    dispatch(loginInfoRedux(iData, successMsg));
+   
+    // userLogin(iData).then((res)=>{
+    //   console.log(res);
+    //   localStorage.setItem("myToken",res.data.token);
+    //   Auth.setToken(res.data.token)
+    // });
   };
 
   const locally=()=>{

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Row,
   Col,
@@ -15,16 +15,36 @@ import Img from "../../Assets/Img/Img";
 import GButton from "../GComponents/GButton";
 import GIconInput from "../GComponents/GIconInput";
 import Svg from "../../Assets/Svg/Svg";
+import { useSelector,useDispatch  } from "react-redux";
 
 const Header = () => {
-  useEffect(() => {}, []);
+  const dispatch=useDispatch();
+  useEffect(() => {
+   // dispatch(getAboutCompAction());
+  }, [dispatch]);
+ 
+  const loggedInData = useSelector((state) => {
+    return (
+      state &&
+      state.loggedInData
+    );
+  });
+
+  console.log("header loggedData",loggedInData);
+ 
+  const [data, setdata] = useState(
+    loggedInData && loggedInData
+  );
+  useEffect(() => {
+    setdata(loggedInData && loggedInData);
+  }, [loggedInData]);
   return (
     <div>
       <header className="siteHeader bgWhite pt15 pb15 topUp">
         <Container>
           <Row className="align-items-center">
             <WebRightSideHeaderContentWithoutLogin />
-
+            <Link to="/logout">Logout</Link>
             {/* <WebRightSideHeaderContentWithLogin /> */}
           </Row>
         </Container>

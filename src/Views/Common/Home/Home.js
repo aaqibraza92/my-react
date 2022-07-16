@@ -45,6 +45,9 @@ const Home = (props) => {
   return (
     <>
       <Container>
+      {
+        console.log("data",data)
+      }
         <GAccordion
           data={[
             {
@@ -65,10 +68,7 @@ const Home = (props) => {
           ]}
         />
 
-        
-      {
-        console.log("data",data)
-      }
+      
       </Container>
     </>
   );

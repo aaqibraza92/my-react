@@ -30,7 +30,7 @@ let RouterList = [
   },
   {
     element: (
-      <GetRoute isprivate={false} role="Default" page={Pages.HomePage} />
+      <GetRoute isprivate={true} role="Default" page={Pages.HomePage} />
     ),
     path: "/home",
     isAdmin: false,
@@ -45,6 +45,17 @@ let RouterList = [
       />
     ),
     path: "/terms-conditions",
+    isAdmin: false,
+  },
+  {
+    element: (
+      <GetRoute
+        isprivate={false}
+        role="Default"
+        page={Pages.Logout}
+      />
+    ),
+    path: "/logout",
     isAdmin: false,
   },
   {
