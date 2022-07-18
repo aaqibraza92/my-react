@@ -13,6 +13,7 @@ import CustomerUserProfile from "./Customer/CustomerUserProfile/CustomerUserProf
 import CustomerBillingDetails from "./Customer/CustomerBillingDetails/CustomerBillingDetails";
 import CustomerFavouriteProviders from "./Customer/CustomerFavouriteProviders/CustomerFavouriteProviders";
 import Logout from "../Components/Header/Logout";
+import Unauthorized from "./Common/UnauthorizedPage";
 
 const Pages = {
   HomePage: Home,
@@ -29,7 +30,8 @@ const Pages = {
   CustomerUserProfilePage: CustomerUserProfile,
   CustomerBillingDetailsPage: CustomerBillingDetails,
   CustomerFavouriteProvidersPage: CustomerFavouriteProviders,
-  Logout: Logout
+  Logout: Logout,
+  UnAuthorized: Unauthorized 
 
 };
 export default Pages;

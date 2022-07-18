@@ -60,6 +60,7 @@ const Auth = {
   },
   isUserLoggedIn: () => {
     return Auth.getToken() !== null ? true : false;
+    //console.log("whats",Auth.getToken());
   },
 };
 export default Auth;

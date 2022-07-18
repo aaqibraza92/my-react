@@ -1,20 +1,94 @@
 import Pages from "../../Views";
+import Auth from "../Auth/Auth";
+import AuthHelper from "../Auth/AuthHelper";
 
 const GetRoute = ({ isprivate: isPrivate, page: Page, ...rest }) => {
+
+
+  var LoggedIn = false;
+  var role = AuthHelper.getUserRoleFromAuth();
+
+  if (Auth.isUserLoggedIn()) {
+    LoggedIn = true;
+  }
   if (isPrivate) {
-    return (
+    // check role of user
+    if (rest.role === "Salon" && role !== "Salon") {
       <>
-        <Pages.HeaderComponent />
-        <Page {...rest} />
-        <Pages.FooterComponent />
-      </>
-    );
+       
+      </>;
+      return ""
+    } else if (rest.role === "Customer" && role !== "Customer") {
+      return ""
+    } else if (rest.role === "Admin" && role !== "Admin") {
+      return ""
+      
+    } else if (role === "Default") {
+      return (
+        <>
+          {rest.enableHeaderFooter && (
+            <Pages.HeaderComponent />
+          )}
+          {rest.enableHeaderFooter && (
+            <Pages.FooterComponent footer={rest.footer || false} />
+          )}
+        </>
+      );
+    } else {
+      if (role !== rest.role) {
+        return <Pages.UnAuthorized/>;
+      }
+    }
+
+    var isValid = false;
+    var token = null;
+    if (Auth.isUserLoggedIn()) {
+      token = Auth.getToken();
+      isValid = true;
+    }
+    if (isValid) {
+      if (rest.isAdmin) {
+      } else {
+        return (
+          <>
+            {rest.enableHeaderFooter && (
+              <Pages.HeaderComponent />
+            )}
+            <div className="contentWrapper">
+              <Page {...rest} />
+            </div>
+
+            {rest.enableHeaderFooter && (
+              <Pages.FooterComponent footer={rest.footer || false} />
+            )}
+          </>
+        );
+      }
+    } else {
+      return (
+        <>
+          {rest.enableHeaderFooter && (
+            <Pages.HeaderComponent />
+          )}
+          <Pages.LoginPage />
+          {rest.enableHeaderFooter && (
+            <Pages.FooterComponent footer={rest.footer || false} />
+          )}
+        </>
+      );
+    }
   } else {
     return (
       <>
-        <Pages.HeaderComponent />
-        <Page {...rest} />
-        <Pages.FooterComponent footer={rest.footer || false} />
+        {rest.enableHeaderFooter && (
+          <Pages.HeaderComponent />
+        )}
+        <div className="contentWrapper">
+          <Page {...rest} />
+        </div>
+        {rest.enableHeaderFooter && (
+          <Pages.FooterComponent footer={rest.footer || false} />
+        )}
       </>
     );
   }
@@ -29,9 +103,7 @@ let RouterList = [
     isAdmin: false,
   },
   {
-    element: (
-      <GetRoute isprivate={true} role="Default" page={Pages.HomePage} />
-    ),
+    element: <GetRoute isprivate={true} role="Default" page={Pages.HomePage} />,
     path: "/home",
     isAdmin: false,
   },
@@ -48,13 +120,7 @@ let RouterList = [
     isAdmin: false,
   },
   {
-    element: (
-      <GetRoute
-        isprivate={false}
-        role="Default"
-        page={Pages.Logout}
-      />
-    ),
+    element: <GetRoute isprivate={false} role="Default" page={Pages.Logout} />,
     path: "/logout",
     isAdmin: false,
   },
@@ -83,10 +149,9 @@ let RouterList = [
   {
     element: (
       <GetRoute
-        isprivate={false}
-        role="Default"
+        isprivate={true}
+        role="Customer"
         page={Pages.ReviewPolicyPage}
-       
       />
     ),
     path: "/review-policy",
@@ -98,7 +163,6 @@ let RouterList = [
         isprivate={false}
         role="Default"
         page={Pages.CookiesPolicyPage}
-       
       />
     ),
     path: "/cookies-policy",
@@ -106,12 +170,7 @@ let RouterList = [
   },
   {
     element: (
-      <GetRoute
-        isprivate={false}
-        role="Default"
-        page={Pages.AboutPage}
-       
-      />
+      <GetRoute isprivate={false} role="Default" page={Pages.AboutPage} />
     ),
     path: "/about",
     isAdmin: false,
@@ -122,7 +181,6 @@ let RouterList = [
         isprivate={false}
         role="Default"
         page={Pages.CustomerDashboardPage}
-       
       />
     ),
     path: "/customer/dashboard",
@@ -134,7 +192,6 @@ let RouterList = [
         isprivate={false}
         role="Default"
         page={Pages.CustomerUserProfilePage}
-       
       />
     ),
     path: "/customer/profile/userprofile",
@@ -146,7 +203,6 @@ let RouterList = [
         isprivate={false}
         role="Default"
         page={Pages.CustomerBillingDetailsPage}
-       
       />
     ),
     path: "/customer/profile/billing",
@@ -158,11 +214,22 @@ let RouterList = [
         isprivate={false}
         role="Default"
         page={Pages.CustomerFavouriteProvidersPage}
-       
       />
     ),
     path: "/customer/profile/favourite",
     isAdmin: false,
+  },
+  {
+    element: (
+      <GetRoute
+        isprivate={false}
+        role="Default"
+        page={Pages.UnAuthorized}
+      />
+    ),
+    path: "*",
+    isAdmin: false,
+    showHeaderFooder: true,
   },
 ];
 
