@@ -8,6 +8,8 @@ const GetRoute = ({ isprivate: isPrivate, page: Page, ...rest }) => {
   var LoggedIn = false;
   var role = AuthHelper.getUserRoleFromAuth();
 
+  console.log("Auth.isUserLoggedIn()",Auth.isUserLoggedIn());
+
   if (Auth.isUserLoggedIn()) {
     LoggedIn = true;
   }
@@ -16,7 +18,7 @@ const GetRoute = ({ isprivate: isPrivate, page: Page, ...rest }) => {
     if (rest.role === "Salon" && role !== "Salon") {
       <>
        
-      </>;
+      </>; 
       return ""
     } else if (rest.role === "Customer" && role !== "Customer") {
       return ""
