@@ -1,0 +1,31 @@
+header.topUp {
+  /* box-shadow: 0 3px 5px rgba(57,63,72,0); */
+  box-shadow: 0 1px 5px rgba(57, 63, 72, 0.08);
+}
+
+.noBgonDropDown.dropdown button {
+  background: transparent;
+  border: none;
+}
+
+button.btn:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.header_profile_img {
+  width: 45px;
+  height: 45px;
+}
+
+.input-width {
+  width: calc(100% - 139px);
+}
+
+.active-notification {
+  height: 6px;
+  width: 6px;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+}

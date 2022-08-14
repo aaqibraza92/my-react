@@ -1,0 +1,25 @@
+const Img = {
+  HomeBanner: require("./Rectangle1.png"),
+  logo: require("./logo.svg"),
+  login: require("./login.svg"),
+  group7359 : require("./Group.png"),
+  rectangle13157 : require("./Rectangle 13157.png"),
+  rectangle13158 : require("./Rectangle 13158.png"),
+  rectangle13159 : require("./Rectangle 13159.png"),
+  rectangle13160 : require("./Rectangle 13160.png"),
+  rectangle13161 : require("./Rectangle 13161.png"),
+  rectangle13162 : require("./Rectangle 13162.png"),
+  rectangle13163 : require("./Rectangle 13163.png"),
+  rectangle13153 : require("./Rectangle 13153.png"),
+  rectangle13155 : require("./Rectangle 13155.png"),
+  rectangle2559 : require("./Rectangle 2559.png"),
+  rectangle13049 : require("./Rectangle 13049.png"),
+  group55489 : require("./Group 55489.png"),
+  group55491 : require("./Group 55491.png"),
+  group12 : require("./Group12.png"),
+  rectangle13214 : require("./Rectangle 13214.png"),
+  MaskGroup : require("./Mask Group 13.png"),
+  rectangle14009 : require("./Rectangle 14009.png"),
+};
+
+export default Img;

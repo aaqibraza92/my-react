@@ -1,0 +1,65 @@
+:root {
+  --colorBlack: #20272B;
+  --colorLightBlack:#404145;
+  --colorWhite: #fff;
+  --colorGrey: #F7F8F9;
+  --colorLightOrange: #f9f7f7;
+  --colorOrange: #ec7523;
+  --colorRed: #FF3457;
+  --colorGreen: #1CAF4D;
+  --colorYellow: #F9A52B;
+  --colorPara: #54595C;
+  --colorBlue:#47BBD0;
+  --colorDarkBlue:#293F4F;
+}
+.colorYellow{
+  color: var(--colorYellow);
+}
+.colorBlack{
+  color: var(--colorBlack);
+}
+.colorLightBlack {
+  color: var(--colorLightBlack);
+}
+.colorBlue{
+  color: var(--colorBlue);
+}
+.bgBlue{
+  background: var(--colorBlue);
+}
+.bgDarkBlue{
+  background: var(--colorDarkBlue);
+}
+.bgRed{
+  background: var(--colorRed);
+}
+.bggrey{
+  background: var(--colorGrey);
+}
+a:hover{
+  color: var(--colorBlue);
+}
+
+.fBold{
+  font-family: helvitica-bold;
+}
+
+.fLight{
+  font-family: helvitica-light;
+}
+
+h1{
+  font-size: 45px;
+}
+
+h2{
+  font-size: 32px;
+}
+
+h3{
+  font-size: 28px;
+}
+
+p{
+  font-size: 16px;
+}
