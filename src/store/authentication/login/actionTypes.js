@@ -1,3 +1,0 @@
-export const GET_LOGIN="LOGIN";
-export const GET_LOGIN_SUCCESS="GET_LOGIN_SUCCESS";
-export const GET_LOGIN_FAILURE="GET_LOGIN_FAILURE";

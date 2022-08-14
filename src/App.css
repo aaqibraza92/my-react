@@ -1,8 +1,0 @@
-@font-face {
-  font-family: helvitica-regular;
-  src: url("./Assets/Fonts/Helvitica/HelveticaNowDisplay-Regular.otf");
-}
-
-body,p,div,a,li,ul,span {
-  font-family: helvitica-regular;
-}
