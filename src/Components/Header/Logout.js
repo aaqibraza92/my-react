@@ -9,6 +9,7 @@ const Logout = () => {
       Auth.removeLoginAuth();
       GLocalStorage.Remove("user-role");
       GLocalStorage.Remove("user");
+      GLocalStorage.Remove("userRole");
       
     }, []);
     return <Navigate to="/"/>

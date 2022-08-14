@@ -6,10 +6,10 @@ import { Navigate, useNavigate } from "react-router-dom";
 const GetRoute = ({ isprivate: isPrivate, page: Page, ...rest }) => {
   const navigate = useNavigate();
   var LoggedIn = false;
-  var role = AuthHelper.getUserRoleFromAuth();
-
+  var role = AuthHelper.getUserRole();
+  
   {
-    console.log("resst", role);
+    console.log("resst11", role);
   }
 
   if (Auth.isUserLoggedIn()) {
@@ -20,6 +20,13 @@ const GetRoute = ({ isprivate: isPrivate, page: Page, ...rest }) => {
   } else {
     return (
       <>
+      
+     {
+      role==="Salon" &&  <h1>salon </h1>
+     }
+     {
+      role==="Customer" &&  <h1>Customer </h1>
+     }
         {rest.showHeaderFooder && (
           <Pages.HeaderComponent userType={rest.role} />
         )}

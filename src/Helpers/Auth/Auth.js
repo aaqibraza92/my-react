@@ -63,7 +63,7 @@ const Auth = {
     //console.log("whats",Auth.getToken());
   },
   setRole: (value)=>{
-    GLocalStorage.Add("");
+    GLocalStorage.Add("userRole",value);
   }
 };
 export default Auth;

@@ -4,7 +4,7 @@ import GLocalStorage from "../Global/GLocalStorage";
 const AuthHelper = {
   getUserRoleFromAuth: () => {
     var role = "";
-    if (GLocalStorage.IsExists("user")) {
+    if (GLocalStorage.IsExists("userRole")) {
       const data = JSON.parse(GLocalStorage.Get("user"));
       if (data) {
         role = data.userType;
@@ -28,6 +28,10 @@ const AuthHelper = {
     }
     return role;
   },
+  getUserRole: ()=>{
+    return JSON.parse(GLocalStorage.Get("userRole"));
+  }
+
 };
 
 export default AuthHelper;
